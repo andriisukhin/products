@@ -1,0 +1,6 @@
+<div class="list">
+  <h1 class="title">Some Products</h1>
+  <div class="list" *ngIf="list">
+    <app-card *ngFor="let item of list" [card]="item" [id]="item.id"></app-card>
+  </div>
+</div>

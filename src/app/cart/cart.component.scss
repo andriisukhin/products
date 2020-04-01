@@ -1,0 +1,103 @@
+.cart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  &.opened {
+    background-color: rgba(0,0,0,0.2);
+  }
+  &__btn {
+    background: darkred;
+    padding: 5px 10px 5px 5px;
+    appearance: none;
+    box-shadow: none;
+    border: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transition: opacity .3s ease;
+    pointer-events: all;
+    z-index: 2;
+    cursor: pointer;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+    &:hover {
+      opacity: .7;
+      & + .cart__prompt {
+        opacity: 1;
+      }
+    }
+  }
+  &__prompt {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    padding: 10px;
+    background-color: lightgrey;
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+  .prompt {
+    &__line {
+      display: flex;
+      justify-content: space-between;
+      white-space: nowrap;
+      border-bottom: 1px solid black;
+      margin-top: 5px;
+    }
+    &__label {
+      margin-right: 50px;
+    }
+  }
+  &__body {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border: 2px solid darkred;
+    padding: 5px;
+    z-index: 2;
+    pointer-events: all;
+    
+  }
+  &__head {
+    display: flex;
+    font-size: 18px;
+    font-weight: 700;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
+    padding: 20px 0;
+    box-shadow: 1p 1px 3px 1px rgba(0,0,0,.2);
+    padding: 20px 40px;
+  }
+  &__list {
+    max-height: 50vh;
+    overflow-y: scroll;
+  }
+
+  &__close {
+    padding: 0;
+    appearance: none;
+    border: 0;
+    background: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &__empty {
+    padding: 10px 40px;
+    font-size: 18px;
+  }
+}

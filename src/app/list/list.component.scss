@@ -1,0 +1,14 @@
+.list {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.title {
+    font-weight: 900;
+    text-align: center;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}

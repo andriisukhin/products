@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="card__title">{{ card.title }}</div>
+  <div class="card__price">{{ card.variants[0].price }}$</div>
+  <div class="card__info">
+    <div class="card__image" [ngStyle]="{'background-image': 'url('+card.images[0].src+')'}"></div>
+    <div class="card__description" [innerHTML]="card.body_html"></div>
+    <button class="card__btn" type="button" *ngIf="!inCart" (click)="addToCart(card)">Add to Cart</button>
+    <button class="card__btn card__btn_remove" type="button" *ngIf="inCart" (click)="removeFromCart(card.id)">Remove</button>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="cart" [ngClass]="{'opened': cartOpened}">
+  <button class="cart__btn" type="button" (click)="toggleCart()">
+    <img src="../../assets/shopping-cart-solid.svg" alt="cart">
+  </button>
+  <div class="cart__prompt prompt">
+    <div class="prompt__line">
+      <div class="prompt__label">Items</div>
+      <div class="prompt__value">{{ cart.length }}</div>
+    </div>
+    <div class="prompt__line">
+      <div class="prompt__label">Summary</div>
+      <div class="prompt__value">{{ summary }}$</div>
+    </div>
+  </div>
+  <div class="cart__body" *ngIf="cartOpened">
+    <button class="cart__close" (click)="toggleCart()">
+      <img src="../../assets/close.svg" alt="close">
+    </button>
+    <div class="cart__head">
+      <div class="cart__title">Cart</div>
+      <div class="cart__summary">{{ summary }}$</div>
+    </div>
+    <div class="cart__list" *ngIf="cart">
+      <app-card *ngFor="let item of cart" [card]="item" [inCart]="true"></app-card>
+    </div>
+    <div class="cart__empty" *ngIf="!cart.length">
+      No products added
+    </div>
+  </div>
+</div>
