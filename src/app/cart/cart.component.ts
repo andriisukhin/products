@@ -14,16 +14,16 @@ export class CartComponent {
   constructor(private store: Store<State>) {
     this.store.pipe(select(selectCart)).subscribe((data) => {
       this.cart = data;
-    })
+    });
     this.store.pipe(select(summary)).subscribe((data) => {
       this.summary = data;
-    })
+    });
   }
-  test: any
-  
-  cart: Product[]
+  test: any;
 
-  summary: any
+  cart: Product[];
+
+  summary: any;
 
   cartOpened = false;
 

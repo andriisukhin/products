@@ -10,13 +10,13 @@ export class ActionEx implements Action {
   payload: any;
 }
 
-export class setCart implements ActionEx {
+export class SetCart implements ActionEx {
   readonly type = ProductsActionTypes.setCart;
-  
+
   constructor(public payload: any) {}
 }
 
-export class removeFromCart implements ActionEx {
+export class RemoveFromCart implements ActionEx {
   readonly type = ProductsActionTypes.removeFromCart;
 
   constructor(public payload: any) {}

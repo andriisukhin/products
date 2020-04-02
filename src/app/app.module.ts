@@ -21,7 +21,7 @@ import { CartComponent } from './cart/cart.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot(reducers, {initialState: initialState}),
+    StoreModule.forRoot(reducers, {initialState}),
   ],
   providers: [],
   bootstrap: [AppComponent]

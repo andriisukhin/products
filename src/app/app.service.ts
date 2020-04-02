@@ -9,7 +9,7 @@ export class AppService {
 
   constructor(private http: HttpClient) {}
 
-  url = 'https://www.deadstock.ca/products.json'
+  url = 'https://www.deadstock.ca/products.json';
 
   public getData() {
     return this.http.get<ProductsResponse>(this.url);

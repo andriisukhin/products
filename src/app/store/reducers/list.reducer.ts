@@ -7,8 +7,8 @@ export const ListReducer = (state = initialState, action: ActionEx) => {
   switch (action.type) {
     case ProductsActionTypes.setList:
       return [...state, ...action.payload];
-    
+
     default:
       return state;
   }
-}
+};

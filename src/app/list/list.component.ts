@@ -10,6 +10,6 @@ export class ListComponent {
 
   constructor() { }
 
-  @Input() list: Product[]
+  @Input() list: Product[];
 
 }

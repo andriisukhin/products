@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from './app.service';
 import { Store, select } from '@ngrx/store';
-import { setList } from './store/actions/list.actions';
+import { SetList } from './store/actions/list.actions';
 import { State } from './store/index';
 import { selectList } from './store/selectors/list.selector';
 
@@ -18,15 +18,15 @@ export class AppComponent implements OnInit {
   ) {
     this.store.pipe(select(selectList)).subscribe((data) => {
       this.products = data;
-    })
+    });
   }
 
   products: any;
 
   fetchProducts() {
     this.appService.getData().subscribe((response: any) => {
-      this.store.dispatch(new setList(response.products));
-    })
+      this.store.dispatch(new SetList(response.products));
+    });
   }
 
   ngOnInit() {

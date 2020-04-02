@@ -12,11 +12,11 @@ export const selectCart = createSelector(
 export const summary = createSelector(
   products,
   (state: Product[]) => {
-    let sum = 0
+    let sum = 0;
     state.forEach(item => {
       sum += +item.variants[0].price;
       return sum;
-    })
+    });
     return sum.toFixed(2);
   }
-)
+);

@@ -9,7 +9,7 @@ export class ActionEx implements Action {
   payload: any;
 }
 
-export class setList implements ActionEx {
+export class SetList implements ActionEx {
   readonly type = ProductsActionTypes.setList;
 
   constructor(public payload: any) {}
